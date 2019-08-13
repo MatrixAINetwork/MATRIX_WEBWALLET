@@ -1,0 +1,227 @@
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.body-card {
+  width: 1040px;
+}
+
+.body-card .el-card__body {
+  padding: 0;
+}
+
+.align-center {
+  text-align: center;
+  text-align: -moz-center;
+  text-align: -webkit-center;
+}
+
+.common-button {
+  width: 26.5rem;
+  height: 2.63rem;
+  background: #415eaa;
+  border-radius: 2px;
+  border: none;
+  font-size: 0.88rem;
+  color: #fff;
+  letter-spacing: 0.11px;
+  cursor: pointer;
+  outline: none;
+}
+
+.two-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-width {
+  width: 1040px;
+}
+
+h1 {
+  font-size: 1.25rem;
+  color: #2C365C;
+  letter-spacing: 0.18px;
+  margin: 0 0 0.5rem 0;
+}
+
+.card_pos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.card_way {
+  background: #fff;
+  border: 1px solid #d5d7de;
+  border-radius: 3px;
+  width: 12rem;
+  height: 7rem;
+}
+
+.pic_dis {
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+/* 私钥输入框 */
+.key_text {
+  border: 1px solid #ebecf2;
+  width: 26.5rem;
+  height: 5.25rem;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 3px;
+  margin-top: 2.5rem;
+}
+
+.file_btn {
+  background: #415eaa;
+  border-radius: 2px;
+  width: 424px;
+  height: 42px;
+  line-height: 42px;
+  font-size: 0.875rem;
+  color: #FFFFFF;
+  letter-spacing: 0.11px;
+  text-align: center;
+  margin: 2.5rem 0 1.5rem 0;
+  cursor: pointer;
+}
+
+
+.input_style {
+  width: 26.5rem;
+  height: 2.5rem;
+  background: #fff;
+  border: 1px solid #d5d7de;
+}
+
+.dom_justify_center {
+  display: flex;
+  justify-content: center;
+}
+
+.keyStoneHintFont {
+  font-size: 0.75rem;
+  color: #9298ae;
+  letter-spacing: 0.11px;
+  text-align: center;
+}
+
+.a_font {
+  font-size: 0.75rem;
+  color: #1C51DD;
+  letter-spacing: 0.11px;
+  text-align: center;
+  line-height: 17px;
+  cursor: pointer;
+}
+
+.el-form {
+  padding-bottom: 2rem;
+  border-bottom: 1px #d5d7de solid;
+}
+
+.input-name {
+  font-size: 14px;
+  color: #2c365c;
+  letter-spacing: 0.13px;
+  margin-top: 1.94rem;
+  margin-bottom: 1rem;
+}
+
+.common-input {
+  width: 26.5rem;
+  height: 2.5rem;
+}
+
+/*表格公用*/
+.commonTable .el-table {
+  border: 1px solid #d1d7e7;
+  border-bottom: none !important;
+}
+
+.commonTable .el-table td,
+.common .el-table th.is-leaf {
+  border-color: #d5d7de;
+}
+
+.commonTable .el-table .el-table__header tr th {
+  background: rgba(242, 244, 248, .8);
+  color: #2c365c;
+  font-size: 0.88rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.commonTable .el-table .el-table__header tr th .cell {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.commonTable .el-table .el-table__row td .cell {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.commonTable .el-table .el-table__header tr th:first-child .cell,
+.commonTable .el-table .el-table__row td:first-child .cell {
+  padding-left: 1.94rem !important;
+}
+
+.commonTable .el-table .el-table__row .cell {
+  font-size: 0.75rem;
+  color: #2c365c;
+}
+
+/*表格公用*/
+
+/*输入框outline*/
+input,
+textarea {
+  outline: none;
+  padding: 0 0.53rem !important;
+}
+
+/*输入框outline*/
+/*div不可点击*/
+.div-disable {
+  pointer-events: none;
+}
+
+/*div不可点击*/
+
+h4 {
+  margin: 0 auto 2rem;
+  font-size: 0.875rem;
+  color: #9298ae;
+  letter-spacing: 0.13px;
+  text-align: center;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 0.875rem;
+  color: #2c365c;
+  letter-spacing: 0.13px;
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.lang-active {
+  background-color: #ecf5ff !important;
+  color: #66b1ff !important;
+  min-width: 96px;
+}
