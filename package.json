@@ -17,7 +17,7 @@
     "@ledgerhq/hw-transport-webusb": "^4.68.2",
     "@ledgerhq/logs": "^4.68.2",
     "aiman": "0.0.12",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-plugin-component": "^1.1.1",
     "babel-polyfill": "^6.26.0",
     "bignumber.js": "^8.1.1",
