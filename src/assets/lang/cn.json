@@ -2,6 +2,7 @@
   "header": {
     "myWallet": "我的钱包",
     "greenMining": "绿色挖矿",
+    "crossChain": "虫洞",
     "offlineTransfer": "离线转账",
     "aiApplication": "AI应用",
     "contracts": "合约",
@@ -38,6 +39,7 @@
     "copyFile": "复制失败",
     "myAssets": "我的资产",
     "assets": "资产",
+    "NFTManage": "NFT管理",
     "transactionRecord": "交易记录",
     "transfer": "转账",
     "availableAssets": "可用资产",
@@ -49,7 +51,8 @@
     "addressTip2": "的收款地址",
     "accountName": "帐户名",
     "browserLink": "浏览器链接",
-    "addToken": "添加token",
+    "addToken": "添加Token",
+    "addNFToken": "添加NFT",
     "choose": "选择下面其中一种方式打开钱包",
     "mnemonicMan": "(只支持man钱包)"
   },
@@ -89,6 +92,7 @@
     "createWalletTip2": "我们不会存储您的任何信息及密码，",
     "createWalletTip3": "所以创建成功后请妥善保管您的keystore或私钥，",
     "createWalletTip4": "若丢失无法找回！",
+    "createWalletTip5": "",
     "createWalletButton": "一键创建钱包",
     "enterPassword": "请输入密码(不少于9位)",
     "passwordTip": "为了保障您的钱包安全  密码至少为9",
@@ -431,6 +435,16 @@
     "tokenFail": "添加失败",
     "decimal": "小数点位数"
   },
+  "nftoken": {
+    "tittle": "添加NFT",
+    "hint": "添加NFT后，您能在该电脑中查看;如更换电脑，需要重新添加",
+    "tokenContract": "地址 NFTContract",
+    "symbol": "代币符号",
+    "save": "保存",
+    "tokenSuccess": "添加成功",
+    "tokenFail": "添加失败",
+    "decimal": "小数点位数"
+  },
   "dialog": {
     "know": "我知道了",
     "youCan": "您可以在",
@@ -464,6 +478,20 @@
     "other_question": "如果还有其他疑问，请点击查看",
     "FAQ": "挖矿FAQ",
     "greenTips": "绿色挖矿将在2019年4月13日启动敬请期待....."
+  },
+  "crossChain": {
+    "start":"确认",
+    "CrossChain": "虫洞",
+    "Amount": "数量（*最小数量不得少于11MAN）",
+    "From": "从",
+    "To": "到",
+    "availableBalance":"可用资产：",
+    "receiveAddress": "目标地址",
+    "receiveTips": "你将得到",
+    "declare":"说明：",
+    "declare1": "*您可以使用MATRIX主网上的钱包地址的私钥/Keystore来打开您在目标区块链上的收款钱包；",
+    "declare2": "*每次迁移将收取迁移MAN数量的1%作为迁移的Gas费用，当迁移MAN的数量少于1000时，将按照10个MAN进行收取；",
+    "declare3": "*整个迁移过程将花费约5分钟，如遇到目标区块链上交易阻塞，则有可能花费更长的时间，如您在15分钟内没有收到您的迁移资产，请发送邮件到wormhole@matrix.io，并注明您的发送钱包地址， MAN的数量与接收钱包地址，技术人员将在24小时内处理您的问题。"
   },
   "openWallet": {
     "back": "返回"

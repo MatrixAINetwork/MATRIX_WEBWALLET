@@ -4,6 +4,9 @@ import Layout from '@/pages/Layout/Layout'
 import AIApplication from '@/pages/AIApplication/AIApplication'
 import Contract from '@/pages/Contract/Contract'
 import GreenMining from '@/pages/GreenMining/GreenMining'
+import CrossChain from '@/pages/CrossChain/CrossChain'
+import Bridge from '@/components/Bridge/Bridge'
+
 import MiningTransactionOverview from '@/components/MiningTransactionOverview/MiningTransactionOverview'
 import HistoricalIncome from '@/components/HistoricalIncome/HistoricalIncome'
 import MortgageHistory from '@/components/MortgageHistory/MortgageHistory'
@@ -20,7 +23,11 @@ import SetGreetings from '@/pages/SetGreetings/SetGreetings'
 import QueryWallet from '@/pages/QueryWallet/QueryWallet'
 import MyWalletFirst from '@/pages/MyWallet/MyWalletFirst'
 import MyAssets from '@/components/MyAssets/MyAssets'
+import NFTManage from '@/components/NFTManage/NFTManage'
+import NFTTransfer from '@/components/NFTManage/NFTTransfer'
 import Token from '@/components/Token/Token'
+
+import NFToken from '@/components/Token/NFToken'
 import Record from '@/components/Record/Record'
 import OnlineTransfer from '@/pages/OnlineTransfer/OnlineTransfer'
 import store from '@/store'
@@ -87,9 +94,21 @@ let router = new Router({
           name: 'MyAssets',
           component: MyAssets
         }, {
+          path: 'nftManage',
+          name: 'NFTManage',
+          component: NFTManage
+        }, {
+          path: 'nftTransfer',
+          name: 'NFTTransfer',
+          component: NFTTransfer
+        }, {
           path: 'token',
           name: 'Token',
           component: Token
+        }, {
+          path: 'nftoken',
+          name: 'NFToken',
+          component: NFToken
         }, {
           path: 'record',
           name: 'Record',
@@ -200,6 +219,15 @@ let router = new Router({
         path: 'historical-income',
         name: 'HistoricalIncome',
         component: HistoricalIncome
+      }]
+    }, {
+      path: '/crossChain',
+      name: 'CrossChain',
+      component: CrossChain,
+      children: [{
+        path: 'bridge',
+        name: 'Bridge',
+        component: Bridge
       }]
     }, {
       path: '/offline-transfer',

@@ -104,7 +104,7 @@ export default {
           extra_to: [[0, 0, []]],
           nonce: nonce
         }
-        debugger
+        // debugger
         let jsonObj = TradingFuns.getTxData(data)
         jsonObj.data = contract.withdraw.getData(this.httpProvider.toWei(new BigNumber(this.data.value).toString(10)), parseInt(this.data.opration))
         if (this.$store.state.wallet != null) {

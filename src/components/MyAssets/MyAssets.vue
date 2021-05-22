@@ -42,8 +42,12 @@
         </tbody>
       </table>
       <hr class="bottom_hr">
-      <div class="token_btn"
-           @click="goPage('token')">+ {{$t('myWallet.addToken')}}</div>
+      <!-- <div class="two-input"> -->
+        <div class="token_btn"
+            @click="goPage('token')">+ {{$t('myWallet.addToken')}}</div>
+        <!-- <div class="token_btn" style="width: 48%"
+            @click="goPage('nftoken')">+ {{$t('myWallet.addNFToken')}}</div> -->
+      <!-- </div> -->
       <div class="token_btn"
            @click="goPage('createCoin')">+ {{$t('createCoin.tittle')}}</div>
     </div>
@@ -103,8 +107,8 @@
       </table>
       <hr class="bottom_hr">
       <div class="token_btn"
-           @click="goPage('token')">+ {{$t('myWallet.addToken')}}</div>
-
+           @click="goPage('token')">+ {{$t('myWallet.addToken')}}
+      </div>
     </div>
   </div>
 </template>
@@ -185,6 +189,11 @@ export default {
   }
   .query_assets_top {
     text-align: left;
+  }
+  .two-input {
+    /deep/ .el-select {
+      width: 100% !important;
+    }
   }
   hr {
     background-color: #d5d7de;
@@ -273,7 +282,7 @@ export default {
     }
   }
   .bottom_hr {
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
   .token_btn {
     text-align: center;

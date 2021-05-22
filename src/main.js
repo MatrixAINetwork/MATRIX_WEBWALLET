@@ -10,7 +10,7 @@ import VueI18n from 'vue-i18n'
 import ElementUI from 'element-ui'
 import filters from './assets/js/filters'
 import http from './assets/js/http'
-import { chainUrl, ipfsUrl, ipfsPort, protocol } from './assets/js/config' // 配置
+import { chainUrl, ethUrl, ipfsUrl, ipfsPort, protocol } from './assets/js/config' // 配置
 import VueClipboards from 'vue-clipboards'
 import 'element-ui/lib/theme-chalk/index.css'
 import { getCookie } from './assets/js/cookie'
@@ -26,6 +26,10 @@ import 'quill/dist/quill.bubble.css'
 
 // aiman API
 import HttpProvider from '@/assets/js/HttpProvider'
+
+// web3 API
+import EthProvider from '@/assets/js/EthProvider'
+
 // ipfs API
 import IpfsProvider from '@/assets/js/IpfsProvider'
 
@@ -41,6 +45,8 @@ Vue.prototype.httpProvider = new HttpProvider(chainUrl)
 Vue.prototype.ipfsProvider = new IpfsProvider(ipfsUrl, ipfsPort, protocol)
 // websql
 // Vue.prototype.webSql = db
+
+Vue.prototype.ethProvider = new EthProvider(ethUrl)
 
 Vue.use(VueQuillEditor)
 Vue.use(VueI18n)

@@ -2,6 +2,7 @@
   "header": {
     "myWallet": "My Wallet",
     "greenMining": "Green Mining",
+    "crossChain": "Wormhole",
     "offlineTransfer": "Offline Transfer",
     "aiApplication": "AI Application",
     "contracts": "Contracts",
@@ -38,6 +39,7 @@
     "copyFile": "Copied failed",
     "myAssets": "My Assets",
     "assets": "Assets",
+    "NFTManage": "NFT Manage",
     "transactionRecord": "Transaction Record",
     "transfer": "Transfer",
     "availableAssets": "Available Assets",
@@ -50,6 +52,7 @@
     "accountName": "Account Name",
     "browserLink": "Browser Link",
     "addToken": "Add Token",
+    "addNFToken": "Add NFT",
     "choose": "Choose a method to open your wallet",
     "mnemonicMan": "(MAN Wallet Only)"
   },
@@ -85,10 +88,11 @@
   },
   "createWallet": {
     "createWallet": "Create a wallet",
-    "createWalletTip1": "MATRIX wallet is a decentralized web-based wallet.",
-    "createWalletTip2": "We will not store any information and passwords for you,",
-    "createWalletTip3": "so there is no way to recover them. Once created, please carefully manage your keystore and private key.",
-    "createWalletTip4": "If you can't find it if you lose it!",
+    "createWalletTip1": "Matrix Wallet is a decentralized web-based wallet.",
+    "createWalletTip2": "We will not store any information and passwords for you.",
+    "createWalletTip3": "There is no way to recover them.",
+    "createWalletTip4": "Once created, please carefully manage your keystore and private key.",
+    "createWalletTip5": "If you can't find them, you will not be able to access your wallet.",
     "createWalletButton": "Create wallet with one click",
     "enterPassword": "Enter a password (at least 9 digits)",
     "passwordTip": "Please make your password at least 9 digits",
@@ -431,6 +435,16 @@
     "tokenFail": "Add failed",
     "decimal": "Decimal"
   },
+  "nftoken": {
+    "tittle": "Add NFT",
+    "hint": "After adding a NFT，you can view it on this computer. If you use another computer, you will need to add the Token again",
+    "tokenContract": "NFT Contract address",
+    "symbol": "NFT Symbol",
+    "save": "Save",
+    "tokenSuccess": "Added successfully",
+    "tokenFail": "Add failed",
+    "decimal": "Decimal"
+  },
   "dialog": {
     "know": "I know",
     "youCan": "You can",
@@ -464,6 +478,20 @@
     "other_question": "If you have further questions, please read our ",
     "FAQ": "FAQ",
     "greenTips": "Coming soon...... Green mining will start on April 13th, 2019!"
+  },
+  "crossChain": {
+    "start":"Confirm",
+    "CrossChain": "Wormhole",
+    "Amount": "Amount(*A least 11 MAN for transaction)",
+    "From": "From",
+    "To": "To",
+    "availableBalance":"Available Assets：",
+    "receiveAddress": "Receiving wallet address",
+    "receiveTips": "You will receive",
+    "declare":"Tips：",
+    "declare1": "*The receiving wallet of your cross-chain transfer can be unlocked using the same private key or keystore as your Matrix mainnet wallet.",
+    "declare2": "* A 1% gas fee is charged for every transfer worth over 1000 MAN. For a transfer under 1000 MAN, a fixed amount of 10 MAN is charged.",
+    "declare3": "* It normally takes about five minutes to receive a transfer. When a transaction overload happens, your transfer may take longer to arrive. If you fail to receive the transfer after 15 minutes, send an email detailing the transferred amount and receiving wallet address to wormhole@matrix.io for support."
   },
   "openWallet": {
     "back": "Back"

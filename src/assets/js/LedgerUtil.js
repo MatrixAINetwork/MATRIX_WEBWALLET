@@ -11,7 +11,7 @@ LedgerUtil.getAddress = (account, change, addressIndex) => {
           TransportWebUSB.create().then(transport => {
             if (transport) {
               let app = new MatrixApp(transport)
-              app.getAddress(account, change, addressIndex).then(result => {
+              app.getAddress(account, change, addressIndex, true).then(result => {
                 if (result) {
                   result.address = WalletUtil.getManAddress(WalletUtil.getAddress(result.address))
                   resolve(result)

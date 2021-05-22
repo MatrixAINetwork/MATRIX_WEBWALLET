@@ -5,6 +5,9 @@
         <span class="query_assets"
               :class="{'active' : type === 'myAssets'}"
               @click="changeType('myAssets')">{{$t('myWallet.myAssets')}}</span>|
+        <span class="query_assets"
+              :class="{'active' : type === 'NFTManage'}"
+              @click="changeType('NFTManage')">{{$t('myWallet.NFTManage')}}</span>|
         <span class="transaction_records"
               @click="changeType('record')"
               :class="{'active' : type === 'record'}">{{$t('myWallet.transactionRecord')}}</span>
@@ -37,7 +40,7 @@ export default {
       } else if (to.name === 'MyAssets') {
         this.type = 'myAssets'
       }
-      if (to.name === 'Token' || to.name === 'OnlineTransfer' || to.name === 'Undo') {
+      if (to.name === 'Token' || to.name === 'NFTTransfer' || to.name === 'CreateCoin' || to.name === 'NFToken' || to.name === 'OnlineTransfer' || to.name === 'Undo') {
         this.showBack = true
       } else {
         this.showBack = false

@@ -17,6 +17,8 @@
              @click="changeMenu('contract')">{{$t('header.contracts')}}</label>
       <label :class="{'active' : type === 'offlineSend'}"
              @click="changeMenu('offlineSend')">{{$t('header.offlineSend')}}</label>
+      <label :class="{'active' : type === 'crossChain'}"
+             @click="changeMenu('crossChain/bridge')">{{$t('header.crossChain')}}</label>
     </div>
     <div class="info">
       <!-- <label v-html="userName"
@@ -220,7 +222,7 @@ export default {
       cursor: pointer;
     }
     label:not(:first-child) {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
     }
     .active {
       opacity: 1;

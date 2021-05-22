@@ -8,7 +8,7 @@
           <i class="el-icon-arrow-left"></i>
           {{$t('openWallet.back')}}
         </span>
-        <div class="creat_walllet_hint ">{{$t('createWallet.createWalletTip1')}}<br>{{$t('createWallet.createWalletTip2')}}<br>{{$t('createWallet.createWalletTip3')}}<br>{{$t('createWallet.createWalletTip4')}}</div>
+        <div class="creat_walllet_hint ">{{$t('createWallet.createWalletTip1')}}<br>{{$t('createWallet.createWalletTip2')}}<br>{{$t('createWallet.createWalletTip3')}}<br>{{$t('createWallet.createWalletTip4')}}<br>{{$t('createWallet.createWalletTip5')}}</div>
         <div class="file_btn"
              @click="goPage('/my-wallet/CreateWalletSecond')">
           {{$t('createWallet.createWalletButton')}}

@@ -14,20 +14,18 @@
           </el-form-item>
         </div>
       </div>
+      <!-- 转账金额 -->
       <div class="form-item">
-        <div class="input-name">{{$t('transfer.transferAmount')}}：</div>
+        <div class="input-name">{{$t('NFT ID')}}：</div>
         <div class="input-money">
           <div class="common-input">
             <el-form-item prop="value">
-              <el-input :placeholder="$t('transfer.enter') + ruleForm.token.toLocaleUpperCase() + $t('transfer.amount')"
+              <el-input :placeholder="$t('transfer.enter') + $t(' NFT ID')"
                         v-model="ruleForm.value"
                         class="input-with-select"
                         type="number">
                 <el-select v-model="ruleForm.token"
                            slot="append">
-                  <el-option label="MAN"
-                             value="MAN"
-                             @click.native="getTokenOrMoreBalance('')"></el-option>
                   <el-option v-for="(item, index) in matrixCoin"
                              :key="index"
                              :label="item.name"
@@ -37,112 +35,25 @@
               </el-input>
             </el-form-item>
           </div>
-          <div class="balance-height">
-            <span class="balance-font font-dis">{{$t('myWallet.balance')}}：{{balance | weiToNumber}}({{ruleForm.token.toLocaleUpperCase()}})</span>
-            <a class="sendBalance-font font-dis"
-               @click="sendAll"
-               v-show="ruleForm.addressList.length === 0">{{$t('transfer.allAsset')}}</a>
-          </div>
         </div>
       </div>
       <hr style="border:0.5px #d5d7de dashed">
-
-      <div v-if="ruleForm.addressList.length > 0"
-           v-for="(item,index) in ruleForm.addressList"
-           :key="index">
-        <div class="form-item">
-          <div class="input-name"
-               style="margin-top: 4px;">{{$t('transfer.Beneficiary')}}：</div>
-          <div class="common-input">
-            <el-form-item prop="to">
-              <el-input :placeholder="$t('transfer.enterRecipient')"
-                        v-model="item.to"></el-input>
-            </el-form-item>
-          </div>
-        </div>
-        <div class="form-item">
-          <div class="hint-error"
-               @click="delrecords(index)">{{$t('transfer.deleteAddress')}}</div>
-          <div class="input-name">{{$t('transfer.transferAmount')}}：</div>
-          <div class="input-money">
-            <div class="common-input">
-              <el-form-item prop="amount">
-                <el-input :placeholder="$t('transfer.enter') + ' ' + ruleForm.token.toLocaleUpperCase() + ' ' + $t('transfer.amount')"
-                          v-model="item.value"
-                          type="number">
-                </el-input>
-              </el-form-item>
-            </div>
-          </div>
-        </div>
-        <hr style="border:0.5px #d5d7de dashed">
-      </div>
-
-      <div class="add-receipt"
-           @click="addAccount()"
-           v-if="coinType!='token'">
-        <i class="el-icon-plus"></i>
-        {{$t('transfer.addAddress')}}
-      </div>
+      <!-- gas 支付方式 -->
       <div class="form-item">
         <div class="two-input">
           <div>
             <div class="input-name">{{$t('transfer.estimatedGas')}}：
-              <a class="sendBalance-font font-dis"
-                 @click="estimate">{{$t('transfer.estimate')}}</a>
+              <!-- <a class="sendBalance-font font-dis"
+                 @click="estimate">{{$t('transfer.estimate')}}</a> -->
             </div>
             <div class="common-input">
               <el-input v-model="ruleForm.gas"></el-input>
             </div>
           </div>
-          <div>
-            <div class="input-name">{{$t('transfer.gasMethod')}}：</div>
-            <div class="common-input">
-              <el-select v-model="ruleForm.IsEntrustTx">
-                <el-option :label="$t('transfer.selfPay')"
-                           :value="''"></el-option>
-                <el-option :label="$t('transfer.otherPay')"
-                           :value="1"></el-option>
-              </el-select>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="form-item">
-        <div class="input-name">{{$t('transfer.transferMethod')}}：</div>
-        <div class="common-input">
-          <el-radio v-model="ruleForm.ExtraTimeTxType"
-                    label="0">{{$t('transfer.realTime')}}</el-radio>
-          <el-radio v-model="ruleForm.ExtraTimeTxType"
-                    label="3">{{$t('transfer.scheduled')}}</el-radio>
-        </div>
-        <div class="block"
-             v-if="ruleForm.ExtraTimeTxType==3">
-          <el-date-picker v-model="timingTime"
-                          type="datetime"
-                          :placeholder="$t('transfer.selectTime')">
-          </el-date-picker>
-        </div>
-      </div>
-      <div class="form-item">
-        <div class="message-type">
-          <div :class="{'active': messageType === 'text'}"
-               @click="changeMessageType('text')">{{$t('transfer.message')}}</div>
-          <div :class="{'active': messageType === 'richText'}"
-               @click="changeMessageType('richText')">{{$t('transfer.advancedMessage')}}</div>
-          <div :class="{'active': messageType === 'distributedStorage'}"
-               @click="changeMessageType('distributedStorage')">{{$t('transfer.ipfs')}}</div>
-        </div>
-        <el-input type="textarea"
-                  :autosize="{ minRows: 4, maxRows: 4}"
-                  v-if="messageType === 'text'"
-                  v-model="ruleForm.data"></el-input>
-        <rich-text v-if="messageType === 'richText'"
-                   @editData="editData"></rich-text>
-        <distributed-storage @inputData="inputData"
-                             v-if="messageType === 'distributedStorage'"></distributed-storage>
       </div>
     </el-form>
+    <!--  生成交易 -->
     <div class="step-button">
       <button class="common-button"
               @click="generateTx">{{$t('transfer.confirm')}}</button>
@@ -207,7 +118,7 @@ import sendSign from '@/components/TransferDialog/sendSignTransfer'
 import transferSuccess from '@/components/TransferDialog/transferSuccess'
 import store from 'store'
 export default {
-  name: 'OfflineTransferForm',
+  name: 'NFTTransferForm',
   data () {
     return {
       address: '',
@@ -309,60 +220,37 @@ export default {
         this.information = data
       }
     },
-    getMatrixCoin () { // 获取链的多币种
-      try {
-        let matrixCoin = this.httpProvider.man.getMatrixCoin('latest')
-        if (matrixCoin != null) {
-          let matrixCoinArray = []
-          matrixCoin.forEach(e => {
-            matrixCoinArray.push({
-              name: e,
-              type: 'more'
-            })
-          })
-          this.matrixCoin = matrixCoin
-        }
-      } catch (e) {
-        this.$message.error(e.message)
-      }
-    },
     getToken () { // 获本地token代币
-      let tokenArray = store.get('token')
+      let tokenArray = store.get('nftoken')
       if (typeof (tokenArray) === 'string') {
         tokenArray = JSON.parse(tokenArray)
       }
+      console.log(tokenArray)
       if (tokenArray != null) {
         // tokenArray = JSON.parse(tokenArray)
         tokenArray.forEach(e => {
           this.matrixCoin.push({
-            name: e.tokenName,
-            type: 'token',
-            tokenContract: e.tokenContract,
-            tokenName: e.tokenName,
-            digits: e.digits
+            name: e.nftName,
+            type: 'nftoken',
+            tokenContract: e.nftContract,
+            tokenName: e.nftName
           })
         })
       }
-      let matrixCoins = this.httpProvider.man.getMatrixCoin('latest')
-      if (matrixCoins != null && JSON.stringify(matrixCoins) !== '[]') {
-        matrixCoins.forEach(e => {
-          this.matrixCoin.push({
-            name: e,
-            type: 'more'
-          })
-        })
-      }
+      console.log('matrixCoin', this.matrixCoin)
     },
     getTokenOrMoreBalance (item) {
+      console.log(item)
       try {
-        if (item.type === 'token') {
+        if (item.type === 'nftoken') {
           let currency = item.tokenContract.split('.')[0]
           let tokenObj = new Token(WalletUtil.getAddress(item.tokenContract), WalletUtil.getAddress(this.address), item.tokenName, item.digits, currency)
           this.tokenObj = tokenObj
           let sendTokenBalance = tokenObj.setBalance()
           sendTokenBalance.currency = currency
+          console.log(sendTokenBalance)
           let result = this.httpProvider.man.call(sendTokenBalance)
-          this.coinType = 'token'
+          this.coinType = 'nftoken'
           this.sendTokenObj = item
           if (result === '0x') {
             this.balance = 0
@@ -372,17 +260,7 @@ export default {
           this.ruleForm.addressList = []
           this.sendCoin = item.name
         } else {
-          if (item !== '') {
-            let address = WalletUtil.getCurrencyAddress(this.address, item.name)
-            this.balance = this.httpProvider.man.getBalance(address)[0].balance
-            this.coinType = 'more'
-            this.moreType = item.name
-            this.sendCoin = item.name
-          } else {
-            this.coinType = ''
-            this.balance = this.httpProvider.man.getBalance(this.address)[0].balance
-            this.sendCoin = 'MAN'
-          }
+          this.$message.error('Invalid NFT')
         }
       } catch (e) {
         this.$message.error(e.message)
@@ -507,13 +385,11 @@ export default {
             if (this.$store.state.wallet != null) {
               if (this.$store.state.wallet.privateKey) {
                 let tx = WalletUtil.createTx(jsonObj)
-                console.log(tx)
                 let privateKey = this.$store.state.wallet.privateKey
                 privateKey = Buffer.from(privateKey.indexOf('0x') > -1 ? privateKey.substring(2, privateKey.length) : privateKey, 'hex')
                 tx.sign(privateKey)
                 let serializedTx = tx.serialize()
                 this.newTxData = SendTransfer.getTxParams(serializedTx)
-                console.log(this.newTxData)
                 this.confirmTransfer = true
               } else {
                 this.confirmOffline = true

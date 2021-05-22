@@ -212,7 +212,7 @@ WalletUtil.padLeftEven = function (hex) {
 
 // 校验man地址
 WalletUtil.validateManAddress = function (address) {
-  return (/MAN\.[0-9a-zA-Z]{21,29}$/.test(address))
+  return (/MAN\.[0-9a-zA-Z]{21,29}$/.test(address)) && this.checkAddressCrc8(address)
   // return (/^[A-Z]{2,8}\.[0-9a-zA-Z]{21,29}$/.test(address))
 }
 
@@ -239,6 +239,21 @@ WalletUtil.createTx = (jsonObj) => {
 
 WalletUtil.hexToDecimal = function (hex) {
   return new BigNumber(hex).toString()
+}
+
+// 获得多币种地址
+WalletUtil.checkAddressCrc8 = function (address) {
+  let crc = address[address.length - 1]
+  address = address.slice(0, -1)
+  let crc8 = polycrc.crc(8, 0x07, 0x00, 0x00, false)
+
+  let arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P',
+    'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+    'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+  ]
+  console.log(crc)
+  console.log(arr[crc8(address) % 58])
+  return (arr[crc8(address) % 58] === crc)
 }
 
 // 获得多币种地址
@@ -309,6 +324,12 @@ WalletUtil.addressChange = function (addrTemp) {
 
 WalletUtil.decimalToHex = function (dec) {
   return new BigNumber(dec).toString(16)
+}
+
+// 根据MAN地址获取eth地址
+WalletUtil.getEthAddress = function (address) {
+  let addrTemp = address.split('.')[1]
+  return '0x' + (bs58.decode(addrTemp.substring(0, addrTemp.length - 1))).toString('hex')
 }
 
 export default WalletUtil
